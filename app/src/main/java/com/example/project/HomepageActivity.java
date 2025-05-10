@@ -118,7 +118,8 @@ public class HomepageActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        displayPets(User.getPets());
+        //displayPets(User.getPets());
+        //METHOD SONRASI AÇILACAK
 
     }
 

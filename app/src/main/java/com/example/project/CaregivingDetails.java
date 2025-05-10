@@ -62,7 +62,7 @@ public class CaregivingDetails extends AppCompatActivity {
 
         ticketId = getIntent().getStringExtra("ticketId");//Not sure
 
-        String applicantId = "123";//Will probably change
+        String applicantId = "123";//Will probably change //User.getId();
 
         apply.setOnClickListener(new View.OnClickListener() {
             @Override

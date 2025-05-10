@@ -189,7 +189,7 @@ public class CaregivingTickets extends AppCompatActivity {
         ticket.setPet(pet);
         ticket.setCity(city);
         ticket.setDetails(details);
-        ticket.setOwnerId("123");
+        ticket.setOwnerId("123"); //User.getId();
         ticket.setStartingDate(startingDate, startingHour, startingMinute);
         ticket.setEndingDate(endingDate, endingHour, endingMinute);
 

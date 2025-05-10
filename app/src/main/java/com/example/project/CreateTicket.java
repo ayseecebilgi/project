@@ -55,7 +55,7 @@ public class CreateTicket extends AppCompatActivity {
         FirebaseUser user = auth.getCurrentUser();
         // if (user == null) return;
 
-        String uuid = "123"; // user.getUuid();
+        String uuid = "123"; // user.getUuid(); //user.getId(); //ChatGPT'ye bakalım
 
     }
 
@@ -104,13 +104,12 @@ public class CreateTicket extends AppCompatActivity {
 
         String details = etDetails.getText().toString().trim();
         if (details.isEmpty()) {
-            etDetails.setError("Please enter details");
-            return;
+            details = "";
         }
 
         FirebaseUser user = auth.getCurrentUser();
 
-        String uuid = "123"; // user.getUuid();
+        String uuid = "123"; // user.getUuid(); //user.getId() //ChatGPT'ye bakalım
 
         Ticket ticket = new Ticket(uuid,
                 selectedPetId,

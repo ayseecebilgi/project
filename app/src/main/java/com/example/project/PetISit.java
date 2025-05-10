@@ -43,7 +43,7 @@ public class PetISit extends AppCompatActivity {
         petsRecyclerView = findViewById(R.id.pets);
         petsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        String userId = "123";
+        String userId = "123"; //User.getId();
 
         db.getApprovedCaregivingTicketsByUser(userId).addOnSuccessListener(documents -> {
             if (documents != null && !documents.isEmpty()) {

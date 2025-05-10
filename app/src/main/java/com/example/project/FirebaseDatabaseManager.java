@@ -50,6 +50,20 @@ public class FirebaseDatabaseManager {
         return ref.set(ticketData);
     }
 
+    //User Save (Değişebilir)
+    public Task<Void> saveUser(User user){
+        DocumentReference ref = db.collection("users").document();
+        user.setUserId(ref.getId());
+
+        Map<String, Object> userData = new HashMap<>();
+        userData.put("userId", user.getUserId());
+        userData.put("name", user.getName());
+        userData.put("surname", user.getSurname());
+        userData.put("email", user.getEmail());
+
+        return ref.set(userData);
+    }
+
     public Task<Void> saveCaregivingTicket(CaregivingTicket ticket) {
         DocumentReference ref = db.collection("caregiving_tickets").document();
         ticket.setTicketId(ref.getId());
@@ -94,6 +108,7 @@ public class FirebaseDatabaseManager {
 
         return query.get();
     }
+
 
     public Task<QuerySnapshot> fetchOtherTickets() {
         List<String> excludedSpecies = Arrays.asList("cat", "dog", "rabbit", "bird", "hamster", "fish", "turtle");
@@ -315,6 +330,29 @@ public class FirebaseDatabaseManager {
 
                     return notifications;
                 });
+    }
+    //User Fetch (değişebilir)
+    public Task<List<User>> fetchUsers() {
+        TaskCompletionSource<List<User>> taskSource = new TaskCompletionSource<>();
+
+        db.collection("users")
+                .get()
+                .addOnSuccessListener(querySnapshot -> {
+                    List<User> users = new ArrayList<>();
+                    for (DocumentSnapshot document : querySnapshot.getDocuments()) {
+                        String userId = document.getString("userId");
+                        String name = document.getString("name");
+                        String surname = document.getString("surname");
+                        String email = document.getString("email");
+
+                        User user = new User(userId, name, surname, email);
+                        users.add(user);
+                    }
+                    taskSource.setResult(users);
+                })
+                .addOnFailureListener(taskSource::setException);
+
+        return taskSource.getTask();
     }
 
     //Deleting Notifications

@@ -57,13 +57,24 @@ public class CreateCaregivingTicket extends AppCompatActivity {
 
         setupPetSelection();
 
+
         postRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CaregivingTicket ticket = new CaregivingTicket();
 
+                if (selectedPetId == null) {
+                    Toast.makeText(view.getContext(), "Please select a pet", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String details = additionalInfo.getText().toString().trim();
+                if (details.isEmpty()) {
+                    details = "";
+                }
+
                 ticket.setPet(selectedPet);
-                ticket.setOwnerId("123");
+                ticket.setOwnerId("123"); //User.getId();
                 ticket.setSpecie(selectedSpecies);
                 ticket.setPetId(selectedPetId);
                 ticket.setDetails(additionalInfo.getText().toString());
@@ -84,18 +95,9 @@ public class CreateCaregivingTicket extends AppCompatActivity {
         FirebaseUser user = auth.getCurrentUser();
         // if (user == null) return;
 
-        String uuid = "123"; // user.getUuid();
+        String uuid = "123"; // user.getUuid(); //user.getId(); //ChatGPT'ye bakalım uuid ile ilgili
 
-        // Test petleri
-        List<Pet> testPets = new ArrayList<>();
-        testPets.add(new Pet("pet1", uuid, "Köpük", "Dog",
-                "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_640.jpg", "Male", 1));
-        testPets.add(new Pet("pet2", uuid, "Lucky", "Cat",
-                "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_640.jpg", "Female", 2));
-        testPets.add(new Pet("pet3", uuid, "Tarçın", "Rabbit",
-                "https://cdn.pixabay.com/photo/2017/04/02/22/36/easter-2197043_640.jpg", "Male", 3));
-
-        displayPets(testPets);
+        //displayPets(testPets);
     }
 
     private void displayPets(List<Pet> pets) {

@@ -158,7 +158,7 @@ public class AdoptionTickets extends AppCompatActivity {
         ticket.setPet(pet);
         ticket.setCity(city);
         ticket.setDetails(details);
-        ticket.setOwnerId("123");
+        ticket.setOwnerId("123"); //User.getId();
 
         ticketsArrayList.add(ticket);
         originalList.add(ticket);

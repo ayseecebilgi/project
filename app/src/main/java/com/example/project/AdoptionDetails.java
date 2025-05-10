@@ -54,7 +54,7 @@ public class AdoptionDetails extends AppCompatActivity {
 
         ticketId = getIntent().getStringExtra("ticketId");
 
-        String applicantId = "123";//Will probably change
+        String applicantId = "123";//Will probably change //User.getId();
 
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
