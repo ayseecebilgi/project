@@ -12,16 +12,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.project.model.Pet;
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainEceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_ece);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -29,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
         });
         Button addPetButton = findViewById(R.id.button);
         if(addPetButton == null){
-            Toast.makeText(MainActivity.this, "Button clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainEceActivity.this, "Button clicked", Toast.LENGTH_SHORT).show();
         }
         else{
             addPetButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(MainActivity.this, AddPetActivity.class);
+                    Intent intent = new Intent(MainEceActivity.this, AddPetActivity.class);
                     startActivity(intent);
                 }
             });
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     "https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg"
             );
 
-            Intent intent = new Intent(MainActivity.this, PetDetailActivity.class);
+            Intent intent = new Intent(MainEceActivity.this, PetDetailActivity.class);
             intent.putExtra("pet", testPet);
             startActivity(intent);
         });

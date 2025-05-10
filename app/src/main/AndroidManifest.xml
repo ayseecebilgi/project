@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Project"
+        android:theme="@style/Theme.VetPet"
         tools:targetApi="31">
 
         <activity android:name=".AddPetActivity" />
@@ -20,15 +20,27 @@
 
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".MainEceActivity"
+            android:exported="true"/>
 
+        <activity android:name=".Notify" android:exported="false"/>
+        <activity android:name=".PetISit" android:exported="false"/>
+        <activity android:name=".CaregivingDetails" android:exported="false"/>
+        <activity android:name=".CaregivingTickets" android:exported="false"/>
+        <activity android:name=".ViewCaregivingTickets" android:exported="false"/>
+        <activity android:name=".AdoptionDetails" android:exported="false"/>
+        <activity android:name=".HomepageActivity" android:exported="true" android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        <activity android:name=".CreateTicket" android:exported="false"/>
+        <activity android:name=".AdoptionTickets" android:exported="false"/>
+        <activity android:name=".Adoption" android:exported="false"/>
+        <activity android:name=".ViewAdoptionTickets" android:exported="false"/>
+        <activity android:name=".Caregiving" android:exported="false"/>
+        <activity android:name=".CreateCaregivingTicket" android:exported="false"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.project.model;
+package com.example.project;
 
 import java.io.Serializable;
 
@@ -6,11 +6,11 @@ public class Pet implements Serializable {
     private String id;
     private String ownerId;
     private String name;
-    private String type;//species
+    private String species;
     private String birthday;
     private String gender;
     private String additionalInfo;
-    private String photoUrl;//imageUrl
+    private String photoUrl;
     private int age;
 
     public Pet() {
@@ -20,7 +20,7 @@ public class Pet implements Serializable {
         this.id = id;
         this.ownerId = ownerId;
         this.name = name;
-        this.type = type;
+        this.species = species;
         this.birthday = birthday;
         this.gender = gender;
         this.additionalInfo = additionalInfo;
@@ -52,12 +52,12 @@ public class Pet implements Serializable {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getSpecies() {
+        return species;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setSpecies(String species) {
+        this.species = species;
     }
 
     public String getBirthday() {
@@ -84,13 +84,16 @@ public class Pet implements Serializable {
         this.additionalInfo = additionalInfo;
     }
 
-    public String getPhotoUrl() {
+    public String getImageUrl() {
         return photoUrl;
     }
 
-    public void setPhotoUrl(String photoUrl) {
+    public void setImageUrl(String photoUrl) {
         this.photoUrl = photoUrl;
     }
 
+    public int getAge(){
+        return age;
+    }
 
 }

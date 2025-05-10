@@ -2,7 +2,6 @@ package com.example.project;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -11,7 +10,6 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.project.model.Pet;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PetDetailActivity extends AppCompatActivity {
@@ -47,14 +45,14 @@ public class PetDetailActivity extends AppCompatActivity {
         pet = (Pet) getIntent().getSerializableExtra("pet");
 
         if (pet != null) {
-            inputType.setText(pet.getType());
+            inputType.setText(pet.getSpecies());
             inputName.setText(pet.getName());
             inputBirthday.setText(pet.getBirthday());
             inputGender.setText(pet.getGender());
             inputInfo.setText(pet.getAdditionalInfo());
 
             Glide.with(this)
-                    .load(pet.getPhotoUrl())
+                    .load(pet.getImageUrl())
                     .placeholder(R.drawable.circle_background)
                     .circleCrop()
                     .into(imagePet);
@@ -81,14 +79,14 @@ public class PetDetailActivity extends AppCompatActivity {
                     Pet updatedPet = documentSnapshot.toObject(Pet.class);
                     if (updatedPet != null) {
                         pet = updatedPet;
-                        inputType.setText(pet.getType());
+                        inputType.setText(pet.getSpecies());
                         inputName.setText(pet.getName());
                         inputBirthday.setText(pet.getBirthday());
                         inputGender.setText(pet.getGender());
                         inputInfo.setText(pet.getAdditionalInfo());
 
                         Glide.with(this)
-                                .load(pet.getPhotoUrl())
+                                .load(pet.getImageUrl())
                                 .placeholder(R.drawable.circle_background)
                                 .circleCrop()
                                 .into(imagePet);

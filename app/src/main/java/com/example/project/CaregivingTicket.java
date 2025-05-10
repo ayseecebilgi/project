@@ -1,4 +1,4 @@
-package com.example.vetpet;
+package com.example.project;
 
 import java.util.Date;
 
