@@ -1,8 +1,9 @@
 package com.example.project;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CaregivingTicket {
+public class CaregivingTicket implements Serializable {
 
     public Pet pet;
     public String details;
