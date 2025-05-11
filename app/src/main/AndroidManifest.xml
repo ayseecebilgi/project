@@ -19,6 +19,9 @@
         <activity android:name=".AddPetActivity" />
         <activity android:name=".PetDetailActivity" />
         <activity android:name=".EditPetActivity" />
+        <activity android:name=".RateCaregiversActivity" />
+        <activity android:name=".RatingListActivity" />
+
         <activity
             android:name=".MainEceActivity"
             android:exported="true" />
