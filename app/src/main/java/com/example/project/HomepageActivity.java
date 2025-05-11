@@ -125,13 +125,9 @@ public class HomepageActivity extends AppCompatActivity {
             startActivityForResult(intent, ADD_PET_REQUEST);
         });
 
-        findViewById(R.id.RankCaregivers).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // i.setClass(getApplicationContext(), className.class);
-                // startActivity(i);
-                //ECE DOLDURACAK   RankCaregivers BUTTON
-            }
+        findViewById(R.id.RankCaregivers).setOnClickListener(view -> {
+            Intent intent = new Intent(HomepageActivity.this, RatingListActivity.class);
+            startActivity(intent);
         });
 
 
