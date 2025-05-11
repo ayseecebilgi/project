@@ -6,6 +6,9 @@ public class User {
     String userId, name, surname, email, country, city;
     ArrayList<Pet> pets;
     ArrayList<Pet> petsIPetSit;
+
+    double averageRating = 0;
+    int totalRatings = 0;
     public User(String userId, String name, String surname, String email){
         this.userId = userId;
         this.name = name;
@@ -30,4 +33,20 @@ public class User {
     public void setName(String name){this.name = name;}
     public void setSurname(String surname){this.surname = surname;}
     public void setEmail(String email){this.email = email;}
+
+    public double getAverageRating(){
+        return this.averageRating;
+    }
+
+    public void setAverageRating(double averageRating){
+        this.averageRating = averageRating;
+    }
+
+    public int getTotalRatings(){
+        return this.totalRatings;
+    }
+
+    public void setTotalRatings(int totalRatings){
+        this.totalRatings = totalRatings;
+    }
 }
