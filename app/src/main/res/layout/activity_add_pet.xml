@@ -35,50 +35,158 @@
         </FrameLayout>
 
         <!-- Type -->
-        <EditText
-            android:id="@+id/inputType"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Type" />
-        <!-- Name -->
-        <EditText
-            android:id="@+id/inputName"
-            android:hint="Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
 
-        <!-- Birthday and Gender in Horizontal Layout -->
+            <!-- Label above the input -->
+            <TextView
+                android:id="@+id/labelType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type"
+                android:textSize="14sp"
+                android:textColor="#444444"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Input field -->
+            <EditText
+                android:id="@+id/inputType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter type"
+                android:padding="12dp"
+                android:background="@drawable/edittext_rounded_background"
+                android:textColor="#000000"
+                android:textColorHint="#888888" />
+
+        </LinearLayout>
+
+        <!-- Name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <!-- Label above the input -->
+            <TextView
+                android:id="@+id/labelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="14sp"
+                android:textColor="#444444"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Input field -->
+            <EditText
+                android:id="@+id/inputName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter name"
+                android:padding="12dp"
+                android:background="@drawable/edittext_rounded_background"
+                android:textColor="#000000"
+                android:textColorHint="#888888" />
+        </LinearLayout>
+
+        <!-- Birthday and Gender in Horizontal Layout with Labels -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="16dp"
+            android:weightSum="2"
+            android:dividerPadding="8dp"
+            android:showDividers="middle">
 
-            <EditText
-                android:id="@+id/inputBirthday"
-                android:hint="Birthday (dd/mm/yyyy)"
+            <!-- Birthday Field -->
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content" />
-
-            <Spinner
-                android:id="@+id/inputGender"
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/labelBirthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Birthday"
+                    android:textSize="14sp"
+                    android:textColor="#444444"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/inputBirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="dd/mm/yyyy"
+                    android:background="@drawable/edittext_rounded_background"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#888888" />
+            </LinearLayout>
+
+            <!-- Gender Field -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:entries="@array/gender_options" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/labelGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textSize="14sp"
+                    android:textColor="#444444"
+                    android:layout_marginBottom="4dp" />
+
+                <Spinner
+                    android:id="@+id/inputGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/gender_options"
+                    android:background="@drawable/edittext_rounded_background"
+                    android:padding="8dp" />
+            </LinearLayout>
         </LinearLayout>
 
-        <!-- Additional Info -->
-        <EditText
-            android:id="@+id/inputInfo"
-            android:hint="Additional Information"
+
+        <!-- Additional Information -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minLines="3"
-            android:gravity="top"
-            android:layout_marginTop="8dp" />
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/labelInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional Information"
+                android:textSize="14sp"
+                android:textColor="#444444"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/inputInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="3"
+                android:gravity="top"
+                android:padding="12dp"
+                android:background="@drawable/edittext_rounded_background"
+                android:textColor="#000000"
+                android:textColorHint="#888888" />
+        </LinearLayout>
+
 
         <!-- Add Pet Button -->
         <Button
