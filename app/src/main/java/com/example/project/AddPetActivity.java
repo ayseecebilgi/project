@@ -19,8 +19,8 @@ import java.util.UUID;
 public class AddPetActivity extends AppCompatActivity {
 
     private ImageView petImageView;
-    private EditText inputName, inputType, inputBirthday, inputInfo;
-    private Spinner inputGender;
+    private EditText inputName, inputBirthday, inputInfo;
+    private Spinner inputGender, inputType;
     private Button addButton, cancelButton;
     private Uri selectedImageUri;
 
@@ -37,7 +37,13 @@ public class AddPetActivity extends AppCompatActivity {
         // Link UI
         petImageView = findViewById(R.id.imagePet);
         inputName = findViewById(R.id.inputName);
-        inputType = findViewById(R.id.inputType);
+        inputType = findViewById(R.id.inputType); // now it's a Spinner
+
+        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this,
+                R.array.pet_type_options, android.R.layout.simple_spinner_item);
+        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inputType.setAdapter(typeAdapter);
+
         inputBirthday = findViewById(R.id.inputBirthday);
         inputInfo = findViewById(R.id.inputInfo);
         inputGender = findViewById(R.id.inputGender);
@@ -97,7 +103,7 @@ public class AddPetActivity extends AppCompatActivity {
                     petId,
                     ownerId,
                     inputName.getText().toString(),
-                    inputType.getText().toString(),
+                    inputType.getSelectedItem().toString(),
                     inputBirthday.getText().toString(),
                     inputGender.getSelectedItem().toString(),
                     inputInfo.getText().toString(),
@@ -126,7 +132,7 @@ public class AddPetActivity extends AppCompatActivity {
                                         petId,
                                         ownerId,
                                         inputName.getText().toString(),
-                                        inputType.getText().toString(),
+                                        inputType.getSelectedItem().toString(),
                                         inputBirthday.getText().toString(),
                                         inputGender.getSelectedItem().toString(),
                                         inputInfo.getText().toString(),

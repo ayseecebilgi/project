@@ -9,7 +9,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class EditPetActivity extends AppCompatActivity {
 
     private ImageView imagePet;
-    private EditText inputType, inputName, inputBirthday, inputGender, inputInfo;
+    private EditText  inputName, inputBirthday, inputInfo;
+    private Spinner inputType, inputGender;
     private Button buttonSave, buttonCancel, buttonDelete;
 
     private FirebaseFirestore db;
@@ -23,14 +24,25 @@ public class EditPetActivity extends AppCompatActivity {
 
         // Link views
         imagePet = findViewById(R.id.imagePet);
-        inputType = findViewById(R.id.inputType);
+
         inputName = findViewById(R.id.inputName);
         inputBirthday = findViewById(R.id.inputBirthday);
-        inputGender = findViewById(R.id.inputGender);
         inputInfo = findViewById(R.id.inputInfo);
         buttonSave = findViewById(R.id.buttonSave);
         buttonCancel = findViewById(R.id.buttonCancel);
         buttonDelete = findViewById(R.id.buttonDelete);
+        inputType = findViewById(R.id.inputType);
+        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this,
+                R.array.pet_type_options, android.R.layout.simple_spinner_item);
+        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inputType.setAdapter(typeAdapter);
+
+        inputGender = findViewById(R.id.inputGender);
+        ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(this,
+                R.array.gender_options, android.R.layout.simple_spinner_item);
+        genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inputGender.setAdapter(genderAdapter);
+
 
         // Get Firebase + intent
         db = FirebaseFirestore.getInstance();
@@ -38,10 +50,14 @@ public class EditPetActivity extends AppCompatActivity {
         pet = (Pet) getIntent().getSerializableExtra("pet");
 
         if (pet != null) {
-            inputType.setText(pet.getSpecies());
+            int typePosition = typeAdapter.getPosition(pet.getSpecies());
+            inputType.setSelection(typePosition);
+
+            int genderPosition = genderAdapter.getPosition(pet.getGender());
+            inputGender.setSelection(genderPosition);
+
             inputName.setText(pet.getName());
             inputBirthday.setText(pet.getBirthday());
-            inputGender.setText(pet.getGender());
             inputInfo.setText(pet.getAdditionalInfo());
             Glide.with(this)
                     .load(pet.getImageUrl())
@@ -62,10 +78,11 @@ public class EditPetActivity extends AppCompatActivity {
         });
 
         buttonSave.setOnClickListener(v -> {
-            pet.setSpecies(inputType.getText().toString());
+            pet.setSpecies(inputType.getSelectedItem().toString());
+            pet.setGender(inputGender.getSelectedItem().toString());
+
             pet.setName(inputName.getText().toString());
             pet.setBirthday(inputBirthday.getText().toString());
-            pet.setGender(inputGender.getText().toString());
             pet.setAdditionalInfo(inputInfo.getText().toString());
 
             db.collection("pets").document(pet.getId()).set(pet)

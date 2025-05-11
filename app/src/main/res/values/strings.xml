@@ -35,6 +35,18 @@
     <string name="type">Type…</string>
     <string name="dd_mm_yyyy">dd/mm/yyyy</string>
 
+    <string-array name="pet_type_options">
+        <item>@string/cat</item>
+        <item>@string/dog</item>
+        <item>@string/rabbit</item>
+        <item>@string/hamster</item>
+        <item>@string/fish</item>
+        <item>@string/turtle</item>
+        <item>@string/bird</item>
+        <item>@string/other</item>
+    </string-array>
+
+
 </resources>
 
 
