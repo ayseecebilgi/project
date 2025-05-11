@@ -114,9 +114,8 @@ public class HomepageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent();
-                //USER PROFILE GELDIGINDE GECERIZ
-               //i.setClass(getApplicationContext(), UserProfileActivity.class);
-               //startActivity(i);
+                i.setClass(getApplicationContext(), UserProfileActivity.class);
+                startActivity(i);
             }
         });
 
