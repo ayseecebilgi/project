@@ -21,6 +21,8 @@ public class CaregivingTicket {
     public int isApproved;
     public String caregivingUserId;
 
+    private boolean isRated;
+
     public CaregivingTicket(){
         this.createdAt = new Date();
     }
@@ -139,5 +141,13 @@ public class CaregivingTicket {
 
     public void setCaregivingUserId(String caregivingUserId) {
         this.caregivingUserId = caregivingUserId;
+    }
+
+    public boolean isRated() {
+        return isRated;
+    }
+
+    public void setRated(boolean rated){
+        this.isRated = rated;
     }
 }
