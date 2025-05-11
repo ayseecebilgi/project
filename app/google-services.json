@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "485014461160",
-    "project_id": "project-c5546",
-    "storage_bucket": "project-c5546.firebasestorage.app"
+    "project_number": "986548263290",
+    "project_id": "vetpet-1da81",
+    "storage_bucket": "vetpet-1da81.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:485014461160:android:efac957479145ccc69475d",
+        "mobilesdk_app_id": "1:986548263290:android:a905fd927ec72c6409dec3",
         "android_client_info": {
           "package_name": "com.example.project"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB7mrgSA9hD_DdUxpNnuvgUPeTGmNKHWeE"
+          "current_key": "AIzaSyA7z2lLOjOTDFdLBdYSVxQGrmaqwh16U40"
         }
       ],
       "services": {
