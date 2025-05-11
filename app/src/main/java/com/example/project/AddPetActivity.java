@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -92,7 +93,7 @@ public class AddPetActivity extends AppCompatActivity {
     }
 
     private void uploadImageAndSavePet() {
-        String ownerId = "124"; // FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String ownerId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String petId = UUID.randomUUID().toString();
 
         if (selectedImageUri == null) {
@@ -115,6 +116,7 @@ public class AddPetActivity extends AppCompatActivity {
                     .set(pet)
                     .addOnSuccessListener(aVoid -> {
                         Toast.makeText(AddPetActivity.this, "Pet added successfully!", Toast.LENGTH_SHORT).show();
+                        setResult(RESULT_OK);
                         finish();
                     })
                     .addOnFailureListener(e ->
