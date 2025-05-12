@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/ticket"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/adoption_text_box"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/pet_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="8dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: Duman"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sex: Female"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/sd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Date: -"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End Date: -"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

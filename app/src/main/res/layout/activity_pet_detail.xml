@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#F8D7E8">
+
+    <!-- Three-dot Edit Toggle Button -->
+    <ImageButton
+        android:id="@+id/buttonEditToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_more"
+        android:background="@android:color/transparent"
+        android:contentDescription="Edit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Return Button -->
+    <Button
+        android:id="@+id/buttonReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#E6A4B4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Pet Image (Circular) -->
+    <FrameLayout
+        android:id="@+id/petImageFrame"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/circle_background"
+        app:layout_constraintTop_toBottomOf="@id/buttonReturn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imagePet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Pet photo"
+            android:scaleType="centerCrop" />
+    </FrameLayout>
+
+
+
+    <!-- Pet Type -->
+    <EditText
+        android:id="@+id/inputType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Type"
+        android:inputType="text"
+        android:enabled="false"
+        android:backgroundTint="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@id/petImageFrame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+
+    <!-- Pet Name -->
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:inputType="text"
+        android:enabled="false"
+        android:backgroundTint="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@id/inputType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Pet Birthday -->
+    <EditText
+        android:id="@+id/inputBirthday"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Birthday"
+        android:inputType="text"
+        android:enabled="false"
+        android:backgroundTint="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@id/inputName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/inputGender"
+        android:layout_marginTop="12dp" />
+
+    <!-- Pet Gender -->
+    <EditText
+        android:id="@+id/inputGender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Gender"
+        android:inputType="text"
+        android:enabled="false"
+        android:backgroundTint="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@id/inputName"
+        app:layout_constraintStart_toEndOf="@id/inputBirthday"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Additional Info -->
+    <EditText
+        android:id="@+id/inputInfo"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:hint="Additional Information"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:minLines="3"
+        android:enabled="false"
+        android:backgroundTint="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@id/inputBirthday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

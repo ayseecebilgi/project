@@ -1,21 +1,15 @@
 {
   "project_info": {
-    "project_number": "716718727742",
-    "project_id": "vetpet-e108a",
-    "storage_bucket": "vetpet-e108a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:716718727742:android:e7508669353c6ad9aaa76f",
         "android_client_info": {
-          "package_name": "com.example.vetpet"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBRr5KpIUjaa-rQ-7py7UaHVtdsOWi1A3g"
         }
       ],
       "services": {

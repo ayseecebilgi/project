@@ -1,0 +1,112 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8D7E8">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Pet Image -->
+        <ImageView
+            android:id="@+id/imagePet"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_background"
+            android:src="@android:drawable/ic_menu_camera"
+            android:scaleType="centerCrop"
+            android:contentDescription="Pet image" />
+
+
+        <!-- Type -->
+        <EditText
+            android:id="@+id/inputType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type"
+            android:inputType="text"
+            android:backgroundTint="#CCCCCC"
+            android:layout_marginTop="12dp" />
+
+        <!-- Name -->
+        <EditText
+            android:id="@+id/inputName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="text"
+            android:backgroundTint="#CCCCCC"
+            android:layout_marginTop="12dp" />
+
+        <!-- Birthday & Gender in Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/inputBirthday"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Birthday"
+                android:inputType="text"
+                android:backgroundTint="#CCCCCC" />
+
+            <EditText
+                android:id="@+id/inputGender"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Sex"
+                android:inputType="text"
+                android:backgroundTint="#CCCCCC"
+                android:layout_marginStart="12dp" />
+        </LinearLayout>
+
+        <!-- Info -->
+        <EditText
+            android:id="@+id/inputInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Additional Information"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:gravity="top"
+            android:backgroundTint="#CCCCCC"
+            android:layout_marginTop="12dp" />
+
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DELETE PET"
+            android:backgroundTint="#E6A4B4"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SAVE CHANGES"
+            android:backgroundTint="#E6A4B4"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:backgroundTint="#E6A4B4"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>
